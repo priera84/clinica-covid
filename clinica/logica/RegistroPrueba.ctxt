@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=RegistroPrueba
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ RegistroVacuna\ here.\r\n\r\n\ @author\ Pedro\ Riera\r\n\ @version\ 1.0.0.0\r\n
+comment1.params=fechaRegistro\ unidadesRegistradas\ marcaPrueba
+comment1.target=RegistroPrueba(java.time.LocalDate,\ int,\ TipoPrueba)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ RegistroVacuna\r\n
+comment2.params=
+comment2.target=TipoPrueba\ getMarcaPrueba()
+comment3.params=objeto
+comment3.target=boolean\ equals(java.lang.Object)
+comment3.text=\r\n\ M\u00E9todo\ que\ se\ utiliza\ por\ el\ m\u00E9todo\ contains\ del\ ArrayList\ para\ comparar\ objetos\ la\ lista.\r\n\ Sobreescribiendo\ este\ m\u00E9todo\ se\ puede\ modificar\ el\ criterio\ por\ el\ cual\ dos\ objetos\ se\ consideran\ iguales.\r\n\ En\ este\ caso\ nos\ interesa\ comparar\ personas\ en\ base\ a\ su\ DNI.\r\n\ @param\ objeto\ de\ tipo\ persona\ con\ el\ que\ se\ compara.\r\n\ @return\ si\ es\ igual\ o\ no,\ en\ este\ caso\ si\ tiene\ el\ mismo\ DNI.\r\n
+numComments=4

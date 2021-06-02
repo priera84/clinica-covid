@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=ColeccionPrueba
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ ColeccionPrueba\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=ColeccionPrueba()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ ColeccionPrueba\r\n
+comment2.params=prueba
+comment2.target=java.lang.Boolean\ addPrueba(Prueba)
+comment3.params=prueba
+comment3.target=void\ borrarPrueba(Prueba)
+comment4.params=
+comment4.target=java.lang.Boolean\ existePCRMenos15dias()
+comment5.params=
+comment5.target=java.lang.Boolean\ existeSerologicoMenos6Meses()
+comment6.params=fechaHora
+comment6.target=int\ getNumeroPruebasDeSemana(java.time.LocalDateTime)
+comment7.params=
+comment7.target=ColeccionPaciente\ getPacientesAsignados()
+comment8.params=
+comment8.target=java.lang.String\ getDescripcion()
+numComments=9

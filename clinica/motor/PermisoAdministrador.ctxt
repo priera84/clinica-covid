@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=PermisoAdministrador
+comment0.text=\r\n\ Clase\ que\ contiene\ los\ comandos\ que\ un\ usuario\ Administrador\ puede\ ejecutar.\r\n\r\n\ @author\ Pedro\ Riera\r\n\ @version\ 1.0.0.0\r\n
+comment1.params=clinica
+comment1.target=PermisoAdministrador(clinica.logica.Clinica)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ ComandoAdministrador\r\n
+numComments=2

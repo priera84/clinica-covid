@@ -1,0 +1,64 @@
+package clinica.motor;
+
+import clinica.logica.*;
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+/**
+ * Write a description of class AltaTecnico here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+public class AltaAdministrador extends Comando
+{
+    // instance variables - replace the example below with your own
+    private ColeccionAdministrador coleccionAdministrador;
+    /**
+     * Constructor for objects of class AltaTecnico
+     */
+    public AltaAdministrador(ColeccionAdministrador coleccionAdministrador)
+    {
+        // initialise instance variables
+        super();
+        this.parametros.put("nombreUsuario", new Parametro<String>("nombreUsuario", "Nombre de usuario"));
+        this.parametros.put("clave",new Parametro<String>("clave", "clave"));
+        this.parametros.put("nombre",new Parametro<String>("nombre", "Nombre"));
+        this.parametros.put("apellidos",new Parametro<String>("apellidos", "Apellidos"));
+        this.parametros.put("fechaNacimiento",new Parametro<LocalDate>("fechaNacimiento", "Fecha de Nacimiento (dd/MM/yyyy)", null, x -> {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            return LocalDate.parse(x, formatter);
+            
+        }));
+        this.parametros.put("dni",new Parametro<String>("dni", "DNI"));
+        this.parametros.put("genero",new Parametro<TipoGenero>("genero", "Genero (MASCULINO o FEMENINO)", null, x-> {
+            return TipoGenero.valueOf(x);
+        }));
+        this.parametros.put("direccion",new Parametro<String>("direccion", "Dirección"));
+        
+        this.coleccionAdministrador = coleccionAdministrador;
+    }
+
+    public ResultadoComando ejecutar()
+    {
+        Administrador administrador= new Administrador(((Parametro<String>)parametros.get("nombreUsuario")).getValor(),
+                                      ((Parametro<String>)parametros.get("clave")).getValor(),
+                                      ((Parametro<String>)parametros.get("nombre")).getValor(),
+                                      ((Parametro<String>)parametros.get("apellidos")).getValor(),
+                                      ((Parametro<LocalDate>)parametros.get("fechaNacimiento")).getValor(),
+                                      ((Parametro<String>)parametros.get("dni")).getValor(),
+                                      ((Parametro<TipoGenero>)parametros.get("genero")).getValor(),
+                                      ((Parametro<String>)parametros.get("direccion")).getValor());
+                                      
+        if(coleccionAdministrador.altaAdministrador(administrador))
+            return new ResultadoComando(TipoResultadoComando.EXITO, "Admministrador dado de alta correctamente");
+        else 
+            return new ResultadoComando(TipoResultadoComando.ERROR, "El administrador que intenta dar de alta, ya existe.");
+    }
+
+    public String getDescripcion()
+    {
+        return "Alta Admnistrador";
+    }   
+}

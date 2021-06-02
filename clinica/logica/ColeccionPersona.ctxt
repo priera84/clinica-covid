@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=ColeccionPersona
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ ColeccionPersona\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=ColeccionPersona()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ ColeccionPersona\r\n
+comment2.params=persona
+comment2.target=java.lang.Boolean\ altaPersona(Persona)
+comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment3.params=dni
+comment3.target=Persona\ getByDni(java.lang.String)
+comment4.params=dni
+comment4.target=java.lang.Boolean\ bajaPersona(java.lang.String)
+comment5.params=dni\ direccionNew
+comment5.target=java.lang.Boolean\ actualizarPersona(java.lang.String,\ java.lang.String)
+comment5.text=\r\n\ Esta\ funci\u00F3n\ permite\ actualizar\ la\ direcci\u00F3n\ de\ la\ persona.\r\n\ @param\ dni\ Dni\ de\ la\ persona\ que\ se\ desea\ actualizar.\r\n\ @param\ direccionNew\ Nueva\ direcci\u00F3n\ que\ se\ desea\ asignar\ al\ usuario.\r\n\ @return\ Booleano\ indicando\ si\ se\ ha\ realizado\ la\ actualizaci\u00F3n.\r\n
+comment6.params=
+comment6.target=java.lang.String\ getDescripcionPersonas()
+numComments=7

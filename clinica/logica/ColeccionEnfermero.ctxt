@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=ColeccionEnfermero
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ ColeccionEnfermero\ here.\r\n\r\n\ @author\ Pedro\ Riera\r\n\ @version\ 1.0.0.0\r\n
+comment1.params=
+comment1.target=ColeccionEnfermero()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ ColeccionEnfermero\r\n
+comment2.params=enfermero
+comment2.target=java.lang.Boolean\ altaEnfermero(Enfermero)
+comment3.params=nombreUsuario
+comment3.target=java.lang.Boolean\ bajaEnfermero(java.lang.String)
+comment4.params=nombreUsuario\ direccionNew
+comment4.target=java.lang.Boolean\ actualizarEnfermero(java.lang.String,\ java.lang.String)
+comment5.params=fechaHora
+comment5.target=Enfermero\ obtenerEnfermeroDisponible(java.time.LocalDateTime)
+comment6.params=fechaHora
+comment6.target=Enfermero\ obtenerEnfermeroDisponibleVacunacion(java.time.LocalDateTime)
+numComments=7

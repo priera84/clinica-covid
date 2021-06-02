@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Paciente
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ paciente\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=nombre\ apellidos\ fechaNacimiento\ dni\ genero\ direccion\ pacienteCovid
+comment1.target=Paciente(java.lang.String,\ java.lang.String,\ java.time.LocalDate,\ java.lang.String,\ TipoGenero,\ java.lang.String,\ java.lang.Boolean)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Paciente\r\n
+comment10.params=
+comment10.target=java.lang.String\ getDescripcion()
+comment2.params=
+comment2.target=java.lang.Boolean\ getConfinado()
+comment3.params=prueba
+comment3.target=java.lang.Boolean\ validarPrueba(Prueba)
+comment4.params=prueba
+comment4.target=java.lang.Boolean\ asignarPrueba(Prueba)
+comment5.params=prueba
+comment5.target=void\ desasignarPrueba(Prueba)
+comment6.params=
+comment6.target=java.lang.Boolean\ requiereVacuna()
+comment7.params=vacuna
+comment7.target=java.lang.Boolean\ asignarVacuna(Vacuna)
+comment8.params=
+comment8.target=java.lang.String\ getDetallePruebas()
+comment9.params=
+comment9.target=java.lang.String\ getDetalleVacunacion()
+numComments=11

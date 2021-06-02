@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=Planificador
+comment0.text=\r\n\ Esta\ clase,\ realiza\ una\ planificaci\u00F3n\ de\ la\ vacunaci\u00F3n\ y\ de\ la\ realizaci\u00F3n\ de\ pruebas\ diagn\u00F3sticas.\r\n\r\n\ @author\ Pedro\ Riera\r\n\ @version\ 1.0.0.0\r\n
+comment1.params=
+comment1.target=void\ planificarVacunacionMayores65()
+comment2.params=
+comment2.target=void\ planificarVacunacionMenores65()
+comment3.params=coleccionPaciente\ coleccionTecnico\ coleccionEnfermero
+comment3.target=Planificador(ColeccionPaciente,\ ColeccionTecnico,\ ColeccionEnfermero)
+comment3.text=\r\n\ Constructor\ for\ objects\ of\ class\ Planificador\r\n
+comment4.params=
+comment4.target=void\ planificarVacunacion()
+comment5.params=fechaHoraPrueba
+comment5.target=Tecnico\ buscarTecnicoPrueba(java.time.LocalDateTime)
+comment6.params=fechaHoraPrueba
+comment6.target=Enfermero\ buscarEnfermeroPrueba(java.time.LocalDateTime)
+comment7.params=prueba
+comment7.target=java.lang.Boolean\ programarPrueba(Prueba)
+comment7.text=\r\n\ Cuando\ llega\ un\ paciente\ a\ la\ clinica\ para\ realizarse\ la\ prueba\ que\ le\ indiquen\ en\ su\ centro\ de\ salud,\ \r\n\ este\ procedimiento,\ le\ asignar\u00E1\ un\ enfermero\ y\ un\ t\u00E9cnico\ disponible.\r\n
+comment8.params=vacuna
+comment8.target=java.lang.Boolean\ programarVacunacion(Vacuna)
+comment9.params=tipoPrueba\ fechaHora\ paciente
+comment9.target=Prueba\ getPrueba(TipoPrueba,\ java.time.LocalDateTime,\ Paciente)
+numComments=10

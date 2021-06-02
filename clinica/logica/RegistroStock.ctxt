@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=RegistroStock
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ RegistroVacuna\ here.\r\n\r\n\ @author\ Pedro\ Riera\r\n\ @version\ 1.0.0.0\r\n
+comment1.params=fechaRegistro\ unidadesRegistradas
+comment1.target=RegistroStock(java.time.LocalDate,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ RegistroVacuna\r\n
+comment2.params=
+comment2.target=java.lang.Boolean\ retirarUnidad()
+comment3.params=
+comment3.target=int\ getUnidadesDisponibles()
+comment4.params=
+comment4.target=int\ getUnidadesRegistradas()
+numComments=5

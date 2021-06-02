@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Parametro
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Parametro\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=nombre\ descripcion\ valorDefecto\ conversor
+comment1.target=Parametro(java.lang.String,\ java.lang.String,\ java.lang.Object,\ Parametro.IConversor)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Parametro\r\n
+comment10.params=
+comment10.target=java.lang.String\ getDescripcion()
+comment11.params=descripcion
+comment11.target=void\ setDescripcion(java.lang.String)
+comment2.params=nombre\ descripcion\ valorDefecto
+comment2.target=Parametro(java.lang.String,\ java.lang.String,\ java.lang.Object)
+comment3.params=nombre\ descripcion
+comment3.target=Parametro(java.lang.String,\ java.lang.String)
+comment4.params=
+comment4.target=Parametro.IConversor\ getConversor()
+comment5.params=
+comment5.target=java.lang.Object\ getValor()
+comment6.params=valorNuevo
+comment6.target=java.lang.Boolean\ setValor(java.lang.String)
+comment7.params=conversor
+comment7.target=void\ setConversor(Parametro.IConversor)
+comment8.params=
+comment8.target=java.lang.String\ getNombre()
+comment9.params=nombre
+comment9.target=void\ setNombre(java.lang.String)
+numComments=12
