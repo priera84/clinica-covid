@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=AsignarVacunaPaciente
+comment0.text=\r\n\ Clase\ que\ representa\ un\ comando\ que\ permite\ programar\ una\ vacuna\ para\ un\ paciente.\ Asignando\ un\ enfermero\ disponible.\r\n\r\n\ @author\ Pedro\ Riera\r\n\ @version\ 1.0.0.0\r\n
+comment1.params=coleccionPaciente\ planificador
+comment1.target=AsignarVacunaPaciente(clinica.logica.ColeccionPaciente,\ clinica.logica.Planificador)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ AsignarVacunacionAEnfermero\r\n
+comment2.params=
+comment2.target=ResultadoComando\ ejecutar()
+comment3.params=
+comment3.target=java.lang.String\ getDescripcion()
+numComments=4

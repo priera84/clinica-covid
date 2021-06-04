@@ -25,44 +25,55 @@ public abstract class Vacuna
     {
         this.estado = TipoEstado.CREADO;
     }
-    
-    public Vacuna(LocalDateTime fechaHora)
+
+    public Vacuna(Paciente paciente)
     {
-        this.fechaHora = fechaHora;
-        this.estado = TipoEstado.PROGRAMADO;
+        this.estado = TipoEstado.CREADO;
+
+        this.asignarPaciente(paciente);
     }
 
     public void asignarPaciente(Paciente paciente)
     {
-        if(paciente.asignarVacuna(this))
-            this.pacienteAsignado = paciente;
+        this.pacienteAsignado = paciente;
     }
 
     public void asignarEnfermero(Enfermero enfermero)
     {
-        this.enfermeroAsignado = enfermeroAsignado;
+        this.enfermeroAsignado = enfermero;
     }
 
     public float diasTranscurridosVacunacion()
     {
         LocalDate ahora = LocalDate.now(ZoneId.of("Europe/Madrid"));
-        return java.time.temporal.ChronoUnit.DAYS.between(this.fechaHora, ahora );
+        return java.time.temporal.ChronoUnit.DAYS.between(this.fechaHora.toLocalDate(), ahora );
     }
 
     public float mesesTranscurridosVacunacion()
     {
         LocalDate ahora = LocalDate.now(ZoneId.of("Europe/Madrid"));
-        return java.time.temporal.ChronoUnit.MONTHS.between(this.fechaHora, ahora );
+        return java.time.temporal.ChronoUnit.MONTHS.between(this.fechaHora.toLocalDate(), ahora );
     }
 
     public LocalDateTime getFechaHora()
     {
         return this.fechaHora;
     }
-    
+
     public TipoEstado getEstado()
     {
         return this.estado;
+    }    
+
+    public void setEstado(TipoEstado estado)
+    {
+        this.estado = estado;
+    }
+    
+    public void setFechaHora(LocalDateTime fechaHora)
+    {
+        this.fechaHora = fechaHora;
+        this.setEstado(TipoEstado.PROGRAMADO);
     }
 
     public Boolean perteneceASemana(LocalDateTime fechaHora)
@@ -88,9 +99,33 @@ public abstract class Vacuna
 
         return sb.toString();
     }
-    
+
     public Paciente getPacienteAsignado()
     {
         return pacienteAsignado;
     }
+
+    public Enfermero getEnfermeroAsignado()
+    {
+        return this.enfermeroAsignado;
+    }
+    public void desasignarVacuna()
+    {
+        if(this.pacienteAsignado != null)
+        {
+            this.pacienteAsignado.desasignarVacuna(this);
+            this.pacienteAsignado = null;
+        }
+
+        if(this.enfermeroAsignado != null)
+        {
+            this.enfermeroAsignado.desasignarVacuna(this);
+            this.enfermeroAsignado = null;
+        }       
+    }
+    
+    public abstract int getNumeroDosis();
+    
+    public abstract Vacuna getCopia();
+    
 }

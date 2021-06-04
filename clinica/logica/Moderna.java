@@ -12,8 +12,18 @@ public class Moderna extends Vacuna
     /**
      * Constructor for objects of class Moderna
      */
-    public Moderna(LocalDateTime fechaHora)
+    public Moderna(Paciente paciente)
     {
-        super(fechaHora);
+        super(paciente);
+    }   
+    
+    public int getNumeroDosis()
+    {
+        return 2;
+    }
+    
+    public Vacuna getCopia()
+    {
+        return new Moderna(this.getPacienteAsignado());        
     }
 }

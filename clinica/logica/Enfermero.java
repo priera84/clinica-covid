@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
+
 /**
  * Write a description of class Enfermero here.
  *
@@ -12,8 +14,11 @@ import java.util.List;
  */
 public class Enfermero extends Usuario
 {
+    private static int MAX_VACUNAS_DIA = 10;
+    private static int HORA_INICIO_JORNADA = 9;
     private ColeccionPrueba coleccionPrueba;
     private ColeccionVacuna coleccionVacuna;
+    private HashMap<LocalDate, Integer> vacunasPorDia;
 
     /**
      * Constructor de la clase
@@ -31,6 +36,7 @@ public class Enfermero extends Usuario
         super(nombreUsuario, clave, TipoUsuario.ENFERMERO, nombre, apellidos, fechaNacimiento, dni, genero, direccion);
         this.coleccionPrueba = new ColeccionPrueba();
         this.coleccionVacuna = new ColeccionVacuna();
+        this.vacunasPorDia = new HashMap<LocalDate, Integer>(); 
     }
 
     /**
@@ -49,6 +55,11 @@ public class Enfermero extends Usuario
         this.coleccionPrueba.borrarPrueba(prueba);
     }
 
+    public void desasignarVacuna(Vacuna vacuna)
+    {
+        this.coleccionVacuna.borrarVacuna(vacuna);
+    }
+
     public Boolean asignarPrueba(Prueba prueba)
     {
         if (this.disponibleParaPrueba(prueba.getFechaHora()))
@@ -57,6 +68,10 @@ public class Enfermero extends Usuario
         return false;
     }
 
+    public Boolean asignarVacuna(Vacuna vacuna)
+    {
+        return this.coleccionVacuna.addVacuna(vacuna);        
+    }
     /**
      * Función que devuelve los pacientes asignados al enfermero, tanto para pruebas diagnósticas como para vacunación.
      * @return ColeccionPaciente con todos los pacientes asignados.
@@ -70,6 +85,34 @@ public class Enfermero extends Usuario
             pacientesAsignados = coleccionVacuna.getPacientesAsignados();
 
         return pacientesAsignados;
+    }
+
+    public Boolean disponibleParaVacunacion(LocalDate fecha)
+    {
+        Integer vacunasDia = this.vacunasPorDia.get(fecha);
+        if(vacunasDia != null)
+            return (vacunasDia < MAX_VACUNAS_DIA);
+        else
+        {
+            //Si no hay datos para ese día, es que el enfermero está disponible.
+            return true;
+        }
+    }
+
+    public LocalDateTime getFechaHoraDia(LocalDate fecha)
+    {
+        //Bloqua un turno del dia
+        Integer vacunasDia = this.vacunasPorDia.get(fecha);
+        if(vacunasDia != null)        
+        {
+            this.vacunasPorDia.put(fecha, ++vacunasDia);
+            return fecha.atTime(HORA_INICIO_JORNADA + vacunasDia, 0);
+        }
+        else
+        {
+            this.vacunasPorDia.put(fecha, 1);
+            return fecha.atTime(HORA_INICIO_JORNADA, 0);
+        }
     }
 
 }

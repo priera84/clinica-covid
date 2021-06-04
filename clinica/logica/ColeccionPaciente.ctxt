@@ -16,4 +16,6 @@ comment6.params=coleccionPaciente
 comment6.target=java.lang.Boolean\ addListaPacientes(ColeccionPaciente)
 comment7.params=
 comment7.target=java.lang.String\ getListaPacientes()
-numComments=8
+comment8.params=paciente
+comment8.target=java.lang.Boolean\ permitirVacunacionPaciente(Paciente)
+numComments=9

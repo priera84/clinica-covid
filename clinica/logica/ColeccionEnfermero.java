@@ -34,7 +34,7 @@ public class ColeccionEnfermero extends ColeccionUsuario
         return actualizarUsuario(nombreUsuario, direccionNew);
     }
 
-    public Enfermero obtenerEnfermeroDisponible(LocalDateTime fechaHora)
+    public Enfermero obtenerEnfermeroDisponiblePrueba(LocalDateTime fechaHora)
     {
         for(Persona persona : this.listaPersonas)
         {
@@ -48,13 +48,15 @@ public class ColeccionEnfermero extends ColeccionUsuario
         return null;
     }
 
-    public Enfermero obtenerEnfermeroDisponibleVacunacion(LocalDateTime fechaHora)
+    
+    public Enfermero obtenerEnfermeroDisponibleVacunacion(LocalDate fecha,LocalDate fecha2dosis)
     {
         for(Persona persona : this.listaPersonas)
         {
             if(persona instanceof Enfermero)
             {
-                return (Enfermero)persona;                
+                if(((Enfermero)persona).disponibleParaVacunacion(fecha) && ((fecha2dosis == null) ||((Enfermero)persona).disponibleParaVacunacion(fecha2dosis)))
+                   return (Enfermero)persona;                
             }
         }
 

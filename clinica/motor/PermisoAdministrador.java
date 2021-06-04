@@ -34,12 +34,9 @@ public class PermisoAdministrador extends ColeccionComando
         RegistraComando(new BajaPaciente(clinica.getColeccionPaciente()));
         RegistraComando(new ModificacionPaciente(clinica.getColeccionPaciente()));
         //Asignar pruebas
-        RegistraComando(new AsignarPruebaATecnico(clinica.getColeccionTecnico(), clinica.getColeccionPaciente()));
-        RegistraComando(new AsignarPruebaAEnfermero(clinica.getColeccionEnfermero(), clinica.getColeccionPaciente()));
-
-        RegistraComando(new AsignarVacunacionAEnfermero(clinica.getColeccionEnfermero(), clinica.getColeccionPaciente()));
-        
         RegistraComando(new AsignarPruebaPaciente(clinica.getColeccionPaciente(), clinica.getPlanificador()));
+        RegistraComando(new AsignarVacunaPaciente(clinica.getColeccionPaciente(), clinica.getPlanificador()));
+        
 
         RegistraComando(new VisualizarDatosPersonas(clinica.getColeccionTecnico(), "Visualizar Datos de técnicos registrados"));
         RegistraComando(new VisualizarDatosPersonas(clinica.getColeccionEnfermero(), "Visualizar Datos de enfermeros registrados"));
@@ -50,8 +47,9 @@ public class PermisoAdministrador extends ColeccionComando
         RegistraComando(new ConsultarStockVacuna(clinica.getStockVacuna()));
         RegistraComando(new ModificacionStockVacuna(clinica.getStockVacuna()));
         
-        RegistraComando(new RegistrarStockPrueba(clinica.getStockPrueba()));
-        
+        RegistraComando(new RegistrarStockPrueba(clinica.getStockPrueba())); 
+        RegistraComando(new ConsultarStockPrueba(clinica.getStockPrueba()));
+        RegistraComando(new ModificacionStockPrueba(clinica.getStockPrueba()));
         
     }
 

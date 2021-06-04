@@ -12,8 +12,18 @@ public class Pfizer extends Vacuna
     /**
      * Constructor for objects of class Pfizer
      */
-    public Pfizer(LocalDateTime fechaHora)
+    public Pfizer(Paciente paciente)
     {
-        super(fechaHora);
+        super(paciente);
     }   
+
+    public int getNumeroDosis()
+    {
+        return 2;
+    }
+
+    public Vacuna getCopia()
+    {
+        return new Pfizer(this.getPacienteAsignado());        
+    }
 }

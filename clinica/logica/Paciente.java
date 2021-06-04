@@ -13,7 +13,7 @@ public class Paciente extends Persona
     // instance variables - replace the example below with your own
     private Boolean pacienteCovid;  
     private Boolean confinado;
-    
+
     private ColeccionPrueba coleccionPrueba;
     private ColeccionVacuna coleccionVacuna;
 
@@ -28,7 +28,10 @@ public class Paciente extends Persona
         this.coleccionVacuna = new ColeccionVacuna();
     }
 
-   
+    public String getDescripcionVacuna()
+    {
+        return this.coleccionVacuna.getDescripcion();
+    }
 
     public Boolean getConfinado()
     {
@@ -58,18 +61,51 @@ public class Paciente extends Persona
         else 
             return false;
     }
-    
+
     public void desasignarPrueba(Prueba prueba)
     {
         coleccionPrueba.borrarPrueba(prueba);
     }
-    
+
+    public void desasignarVacuna(Vacuna vacuna)
+    {
+        coleccionVacuna.borrarVacuna(vacuna);
+    }
 
     public Boolean requiereVacuna()
     {
+        //No tiene vacunas asignadas
+        if(coleccionVacuna.getNumeroVacunas() == 0)
+            return true;
+
+        //Tiene una vacuna y requiere una segunda dosis 
         if(coleccionVacuna.getNumeroVacunas() == 1 && coleccionVacuna.requiereSegundaDosis())
-            return !coleccionVacuna.existeDosisMenos21dias();
-        else return true;         
+            return true;
+        else 
+            return false;         
+    }
+
+    public Boolean grupoPrioritario()
+    {
+        return (this.getEdadPersona() >= 65);
+    }
+
+    public int dosisProgramadas()
+    {
+        return coleccionVacuna.getNumeroVacunas(); 
+    }
+
+    public Boolean requiereProgramarVacuna()
+    {
+        //No tiene vacunas asignadas
+        if(coleccionVacuna.getNumeroVacunas() == 0)
+            return true;
+
+        //Tiene una vacuna, requiere una segunda dosis 
+        if(coleccionVacuna.getNumeroVacunas() == 1 && coleccionVacuna.requiereSegundaDosis())
+            return true;
+        else 
+            return false;         
     }
 
     public Boolean asignarVacuna(Vacuna vacuna)
@@ -92,9 +128,19 @@ public class Paciente extends Persona
     {
         return this.coleccionVacuna.getDescripcion();
     }
-    
+
     public String getDescripcion()
     {
-        return "Paciente: " + super.getDescripcion();
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n\nPaciente: \n" + super.getDescripcion() + "\n");
+        String vacunacion = getDetalleVacunacion();
+        if(vacunacion != null)
+            sb.append("\n" + vacunacion);
+        String pruebas = getDetallePruebas(); 
+        if(pruebas != null)
+            sb.append("\n" + pruebas);
+
+        return sb.toString();
+
     }
 }

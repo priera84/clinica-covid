@@ -12,8 +12,18 @@ public class JohnsonAndJohnson extends Vacuna
     /**
      * Constructor for objects of class JohnsonJohnson
      */
-    public JohnsonAndJohnson(LocalDateTime fechaHora)
+    public JohnsonAndJohnson(Paciente paciente)
     {
-        super(fechaHora);
-    }    
+        super(paciente);
+    }   
+
+    public int getNumeroDosis()
+    {
+        return 1;
+    }
+
+    public Vacuna getCopia()
+    {
+        return new JohnsonAndJohnson(this.getPacienteAsignado());        
+    }
 }
