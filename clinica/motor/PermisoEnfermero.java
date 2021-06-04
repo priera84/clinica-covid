@@ -18,8 +18,8 @@ public class PermisoEnfermero extends ColeccionComando
     {
         super();
         RegistraComando(new VerPacientesAsignado(enfermero));
-        //RegistraComando(new VerPacientesAsignado(enfermero));
-//        RegistraComando(new RegistroVacunacion(enfermero));
+        RegistraComando(new RegistroPruebaEnfermero(enfermero.getPacientesAsignados()));
+        RegistraComando(new RegistroVacunacion(enfermero.getPacientesAsignados()));
 
     
         RegistraComando(new Logout());

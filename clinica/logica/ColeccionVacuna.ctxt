@@ -19,4 +19,6 @@ comment7.params=
 comment7.target=ColeccionPaciente\ getPacientesAsignados()
 comment8.params=fecha
 comment8.target=int\ totalVacunasDia(java.time.LocalDate)
-numComments=9
+comment9.params=fecha
+comment9.target=Vacuna\ getVacunaPendiente(java.time.LocalDate)
+numComments=10

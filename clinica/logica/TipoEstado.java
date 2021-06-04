@@ -9,5 +9,5 @@ package clinica.logica;
  */
 public enum TipoEstado
 {
-    CREADO, PROGRAMADO, REALIZADO, CANCELADO
+    CREADO, PROGRAMADO, REALIZADO, DIAGNOSTICADO, CANCELADO
 }

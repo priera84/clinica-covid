@@ -25,6 +25,7 @@ public class Serologico extends Prueba
         if(resultado >0 && resultado <= 10)
         {        
             this.resultado = resultado;
+            this.setEstado(TipoEstado.DIAGNOSTICADO);
             return true;
         }
         

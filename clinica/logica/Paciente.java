@@ -143,4 +143,32 @@ public class Paciente extends Persona
         return sb.toString();
 
     }
+
+    public Boolean marcarDosisAplicada(LocalDate fecha)
+    {
+        Vacuna vacuna = coleccionVacuna.getVacunaPendiente(fecha);
+        if(vacuna != null)
+        {
+            vacuna.setEstado(TipoEstado.REALIZADO);
+            return true;
+        }
+
+        return false;
+    }
+
+    public Prueba getPruebaPendienteValidacion()
+    {
+      return coleccionPrueba.getPruebaPendienteValidacion();
+    }
+    public Boolean marcarPruebaRealizada(LocalDate fecha)
+    {
+        Prueba prueba = coleccionPrueba.getPruebaPendiente(fecha);
+        if(prueba != null)
+        {
+            prueba.setEstado(TipoEstado.REALIZADO);
+            return true;
+        }
+
+        return false;
+    }
 }

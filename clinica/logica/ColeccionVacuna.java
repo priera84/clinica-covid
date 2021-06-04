@@ -99,4 +99,17 @@ public class ColeccionVacuna
 
         return contador;
     }
+
+    public Vacuna getVacunaPendiente(LocalDate fecha)
+    {
+        if(listaVacunas.size() > 0)
+        {
+            for (Vacuna vacuna: listaVacunas)
+            {
+                if (vacuna.getFechaHora().toLocalDate().equals(fecha) && vacuna.getEstado() == TipoEstado.PROGRAMADO)
+                    return vacuna;
+            }
+        }
+        return null;
+    }
 }

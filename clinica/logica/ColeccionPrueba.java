@@ -2,6 +2,8 @@ package clinica.logica;
 
 import java.time.LocalDateTime;
 import java.util.*;
+import java.time.LocalDate;
+
 /**
  * Write a description of class ColeccionPrueba here.
  *
@@ -100,6 +102,31 @@ public class ColeccionPrueba
             }
             return sb.toString();
         }           
+        return null;
+    }
+    public Prueba getPruebaPendienteValidacion()
+    {
+        if(listaPruebas.size() > 0)
+        {
+            for (Prueba prueba: listaPruebas)
+            {
+                if (prueba.getEstado() == TipoEstado.REALIZADO)
+                    return prueba;
+            }
+        }
+        return null;
+    }
+    
+     public Prueba getPruebaPendiente(LocalDate fecha)
+    {
+        if(listaPruebas.size() > 0)
+        {
+            for (Prueba prueba: listaPruebas)
+            {
+                if (prueba.getFechaHora().toLocalDate().equals(fecha) && prueba.getEstado() == TipoEstado.PROGRAMADO)
+                    return prueba;
+            }
+        }
         return null;
     }
 }

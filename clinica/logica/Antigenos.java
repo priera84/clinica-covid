@@ -21,6 +21,12 @@ public class Antigenos extends Prueba
         // initialise instance variables
         super(fechaHora, paciente);
     }
+    
+    public void setResultado(TipoResultadoPrueba resultado)
+    {
+        this.resultado = resultado;
+        this.setEstado(TipoEstado.DIAGNOSTICADO);
+    }
 
      public Boolean positivoCovid()
      {

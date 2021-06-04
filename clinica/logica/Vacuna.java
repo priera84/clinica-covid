@@ -97,6 +97,8 @@ public abstract class Vacuna
         if(this instanceof JohnsonAndJohnson)
             sb.append(" Johnson and Johnson");
 
+        sb.append("\nEstado vacuna:" + this.estado.toString());
+        
         return sb.toString();
     }
 

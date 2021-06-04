@@ -1,7 +1,6 @@
 package clinica.logica;
 import java.time.LocalDateTime;
 
-
 /**
  * Write a description of class PCR here.
  *
@@ -21,8 +20,14 @@ public class PCR extends Prueba
         super(fechaHora, paciente);
     }
 
-     public Boolean positivoCovid()
-     {
-         return resultado == TipoResultadoPrueba.POSITIVO;
-     }
+    public void setResultado(TipoResultadoPrueba resultado)
+    {
+        this.resultado = resultado;
+        this.setEstado(TipoEstado.DIAGNOSTICADO);
+    }
+
+    public Boolean positivoCovid()
+    {
+        return resultado == TipoResultadoPrueba.POSITIVO;
+    }
 }
