@@ -16,6 +16,7 @@ public abstract class Persona
     private String dni;
     private TipoGenero genero;
     private String direccion;
+    private String telefono;
 
     /**
      * Constructor de la clase
@@ -25,8 +26,9 @@ public abstract class Persona
      * @param  dni   Documento Nacional de Identidad de la persona.
      * @param  genero   Género de la persona.
      * @param  direccion Direcciòn de la persona.
+     * @param  telefono Teléfono de la persona.
      */
-    public Persona(String nombre, String apellidos, LocalDate fechaNacimiento, String dni, TipoGenero genero, String direccion)
+    public Persona(String nombre, String apellidos, LocalDate fechaNacimiento, String dni, TipoGenero genero, String direccion, String telefono)
     {
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -34,12 +36,13 @@ public abstract class Persona
         this.dni = dni;
         this.genero = genero;
         this.direccion = direccion;
+        this.telefono = telefono;
     }
 
     /**
      * Devuelve el nombre de la persona.
      *
-     * @return    el nombre de la persona.
+     * @return  El nombre de la persona.
      */
     public String getNombre()
     {
@@ -57,8 +60,8 @@ public abstract class Persona
     }
 
     /**
-     * Devuelve el apellido de la persona.
-     * @return el apellido de la persona.
+     * Devuelve los apellidos de la persona.
+     * @return Los apellidos de la persona.
      */
     public String getApellidos()
     {
@@ -67,7 +70,7 @@ public abstract class Persona
 
     /**
      * Asigna los apellidos de la persona.
-     * @param los apellidos de la persona.
+     * @param apellidos Los apellidos de la persona.
      */
     public void setApellidos(String apellidos)
     {
@@ -76,7 +79,7 @@ public abstract class Persona
 
     /**
      * Devuelve el dni de la persona.
-     * @return el dni de la persona.
+     * @return El dni de la persona.
      */
     public String getDni()
     {
@@ -85,7 +88,7 @@ public abstract class Persona
 
     /**
      * Devuelve una cadena con la descripción de la persona.
-     * @return la cadena con la descripción de la persona.
+     * @return Una cadena con la descripción de la persona.
      */
     public String getDescripcion()
     {
@@ -97,6 +100,7 @@ public abstract class Persona
         sbDescripcion.append("\nGenero: " + this.genero);
         sbDescripcion.append("\nDNI: " + this.dni);
         sbDescripcion.append("\nDirección: " + this.direccion);
+        sbDescripcion.append("\nTeléfono: " + this.telefono);
         return sbDescripcion.toString();
     }
 
@@ -119,13 +123,6 @@ public abstract class Persona
         return resultado;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 17 * hash + (this.dni != null ? this.dni.hashCode() : 0);
-        return hash;
-    }
-
     /**
      * Método que calcula la edad de la persona.
      * @return la edad de la persona.
@@ -144,5 +141,4 @@ public abstract class Persona
     {
         this.direccion = direccion;
     }
-
 }

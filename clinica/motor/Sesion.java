@@ -2,10 +2,10 @@ package clinica.motor;
 
 
 /**
- * Write a description of class Sesion here.
+ * Clase que contiene los comandos que aparecen inicialmente en la aplicación.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public class Sesion extends ColeccionComando
 {

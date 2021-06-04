@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
 /**
- * Write a description of class VisualizarDatosPersonas here.
+ * Comando que lista personas.
  *
  * @author Pedro Riera
  * @version 1.0.0.0

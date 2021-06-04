@@ -4,7 +4,7 @@ import clinica.logica.*;
 import java.time.LocalDate;
 
 /**
- * Comando que agrega una vacuna en el inventario.
+ * Comando que consulta el inventario de prueba.
  *
  * @author Pedro Riera
  * @version 1.0.0.0

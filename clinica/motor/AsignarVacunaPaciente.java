@@ -43,13 +43,20 @@ public class AsignarVacunaPaciente extends Comando
 
         if (paciente != null)
         {
-            if(planificador.programarVacunacion(fecha, paciente))
+            try
             {
-                return new ResultadoComando(TipoResultadoComando.EXITO, "Vacunación programada:\n" + paciente.getDescripcionVacuna());
+                if(planificador.programarVacunacion(fecha, paciente))
+                {
+                    return new ResultadoComando(TipoResultadoComando.EXITO, "Vacunación programada:\n" + paciente.getDescripcionVacuna());
+                }
+                else
+                {                
+                    return new ResultadoComando(TipoResultadoComando.ERROR, "No hay enfermeros disponibles para realizar la vacunación");
+                }
             }
-            else
-            {                
-                return new ResultadoComando(TipoResultadoComando.ERROR, "No hay enfermeros disponibles para realizar la vacunación");
+            catch(Exception ex)
+            {
+                    return new ResultadoComando(TipoResultadoComando.ERROR, ex.getMessage());
             }
         }
         else

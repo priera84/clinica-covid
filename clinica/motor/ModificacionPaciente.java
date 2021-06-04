@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.List;
 /**
- * Write a description of class ModificacionPaciente here.
+ * Comando que da modifica un paciente.
  *
  * @author Pedro Riera
  * @version 1.0.0.0

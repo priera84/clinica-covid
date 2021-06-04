@@ -1,15 +1,19 @@
 #BlueJ class context
 comment0.target=Consola
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Consola\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Clase\ que\ representa\ una\ interfaz\ de\ tipo\ consola.\r\n\r\n\ @author\ Pedro\ Riera\r\n\ @version\ 1.0.0.0\r\n
 comment1.params=
 comment1.target=Consola()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Consola\r\n
+comment1.text=\r\n\ Constructor\ \r\n
 comment2.params=
 comment2.target=void\ imprimirComandos()
+comment2.text=\r\n\ Imprime\ en\ consola\ los\ comandos\ de\ la\ coleccion\ actual.\r\n
 comment3.params=resultadoComando
 comment3.target=void\ procesarResultado(clinica.motor.ResultadoComando)
+comment3.text=\r\n\ Procesa\ el\ resultado\ de\ un\ comando.\r\n
 comment4.params=comando
 comment4.target=void\ ejecutarComando(clinica.motor.Comando)
+comment4.text=\r\n\ Ejecuta\ un\ comando,\ mostrando\ sus\ parametros\ y\ obteniendo\ los\ valores\ introducidos\ por\ el\ usuario.\r\n\ @param\ Comando\ que\ se\ va\ a\ ejecutar.\r\n
 comment5.params=
 comment5.target=void\ iniciar()
+comment5.text=\r\n\ Procedimiento\ principal\ de\ la\ consola,\ que\ inicia\ la\ aplicaci\u00F3n.\r\n
 numComments=6

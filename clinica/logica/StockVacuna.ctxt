@@ -1,13 +1,16 @@
 #BlueJ class context
 comment0.target=StockVacuna
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ StockVacuna\ here.\r\n\r\n\ @author\ Pedro\ Riera\r\n\ @version\ 1.0.0.0\r\n
+comment0.text=\r\n\ Clase\ que\ representa\ el\ almac\u00E9n/stock\ de\ vacunas.\r\n\r\n\ @author\ Pedro\ Riera\r\n\ @version\ 1.0.0.0\r\n
 comment1.params=
 comment1.target=StockVacuna()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ StockVacuna\r\n
 comment2.params=fechaModificacion\ unidadesRegistradas\ marcaVacuna
 comment2.target=java.lang.Boolean\ modificarVacuna(java.time.LocalDate,\ int,\ TipoMarcaVacuna)
+comment2.text=\r\n\ Funci\u00F3n\ que\ permite\ modificar\ el\ stock\ registrado\ de\ una\ vacuna.\r\n\ @param\ fechaModificacion\ Fecha\ en\ que\ se\ registra\ la\ modificaci\u00F3n.\r\n\ @param\ unidadesRegistradas\ N\u00FAmero\ de\ unidades\ registradas\ para\ esa\ vacuna.\r\n\ @param\ marcaVacuna\ Marca\ de\ la\ vacuna\ registrada.\r\n\ @return\ Booleano\ indicando\ si\ se\ ha\ podido\ modificar\ el\ stock\ de\ la\ vacuna.\r\n
 comment3.params=marcaVacuna
 comment3.target=java.lang.Boolean\ sacarVacunaMarca(TipoMarcaVacuna)
+comment3.text=\r\n\ Funci\u00F3n\ que\ permite\ sacar\ del\ stock\ una\ vacuna.\r\n\ @param\ marcaVacuna\ Marca\ de\ la\ vacuna\ registrada.\r\n\ @return\ Booleano\ indicando\ si\ se\ ha\ podido\ extraer\ la\ vacuna\ del\ stock.\r\n
 comment4.params=
-comment4.target=java.lang.String\ consultarStockVacuna()
+comment4.target=java.lang.String\ consultarStock()
+comment4.text=\r\n\ Funci\u00F3n\ que\ devuelve\ el\ estado\ del\ stock\ de\ vacunas.\r\n\ @return\ String\ que\ describe\ la\ cantidad\ de\ vacunas\ en\ stock\ de\ cada\ tipo.\r\n
 numComments=5

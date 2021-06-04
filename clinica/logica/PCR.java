@@ -2,7 +2,7 @@ package clinica.logica;
 import java.time.LocalDateTime;
 
 /**
- * Write a description of class PCR here.
+ * Clase que representa una prueba de PCR.
  *
  * @author Pedro Riera
  * @version 1.0.0.0
@@ -13,19 +13,28 @@ public class PCR extends Prueba
     private TipoResultadoPrueba resultado;
 
     /**
-     * Constructor for objects of class PCR
+     * Constructor
+     * @param fechaHora fecha hora en que se desea realizar la prueba.
      */
-    public PCR(LocalDateTime fechaHora, Paciente paciente)
+    public PCR(LocalDateTime fechaHora)
     {
-        super(fechaHora, paciente);
+        super(fechaHora);
     }
 
+    /**
+     * Asigna el resultado de la prueba.
+     * @param resultado TipoResultadoPrueba que se le asignará a la prueba.
+     */
     public void setResultado(TipoResultadoPrueba resultado)
     {
         this.resultado = resultado;
         this.setEstado(TipoEstado.DIAGNOSTICADO);
     }
 
+    /**
+     * Devuelve si el resultado representa un positivo por COVID-19.
+     * @return Booleano indicando si el resultado es positivo por COVID-19.
+     */
     public Boolean positivoCovid()
     {
         return resultado == TipoResultadoPrueba.POSITIVO;

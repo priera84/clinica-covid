@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Write a description of class VerPacientesAsignados here.
+ * Comando que permite ver los pacientes asignados a un usuario.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public class VerPacientesAsignado extends Comando
 {

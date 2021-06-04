@@ -1,16 +1,19 @@
 #BlueJ class context
 comment0.target=ColeccionTecnico
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ ColeccionTecnico\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Clase\ que\ representa\ una\ colecci\u00F3n\ de\ usuario\ tecnico.\r\n\r\n\ @author\ Pedro\ Riera\r\n\ @version\ 1.0.0.0\r\n
 comment1.params=
 comment1.target=ColeccionTecnico()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ ColeccionTecnico\r\n
+comment1.text=\r\n\ Constructor\r\n
 comment2.params=tecnico
 comment2.target=java.lang.Boolean\ altaTecnico(Tecnico)
-comment2.text=\r\n\ \r\n
+comment2.text=\r\n\ Funci\u00F3n\ que\ da\ de\ alta\ un\ t\u00E9cnico\ en\ el\ sistema.\r\n\ @param\ tecnico\ Objeto\ tecnico\ con\ los\ datos\ del\ usuario.\r\n\ @return\ Boolean\ indicando\ si\ se\ ha\ dado\ de\ alta\ el\ usuario\ en\ el\ sistema.\r\n
 comment3.params=nombreUsuario
 comment3.target=java.lang.Boolean\ bajaTecnico(java.lang.String)
+comment3.text=\r\n\ Funci\u00F3n\ que\ da\ de\ baja\ un\ tecnico\ en\ el\ sistema.\r\n\ @param\ nombreUsuario\ Nombre\ de\ usuario\ del\ tecnico\ que\ se\ desea\ dar\ de\ baja.\r\n\ @return\ Boolean\ indicando\ si\ se\ ha\ dado\ de\ baja\ el\ usuario\ en\ el\ sistema.\r\n
 comment4.params=nombreUsuario\ direccionNew
 comment4.target=java.lang.Boolean\ actualizarTecnico(java.lang.String,\ java.lang.String)
+comment4.text=\r\n\ Funci\u00F3n\ que\ modifica\ un\ tecnico\ en\ el\ sistema.\r\n\ @param\ nombreUsuario\ Nombre\ de\ usuario\ a\ actualizar.\r\n\ @param\ direccionNew\ Nueva\ direcci\u00F3n\ del\ usuario.\r\n\ @return\ Boolean\ indicando\ si\ se\ ha\ modificado\ el\ usuario\ en\ el\ sistema.\r\n
 comment5.params=fechaHora
 comment5.target=Tecnico\ obtenerTecnicoDisponible(java.time.LocalDateTime)
+comment5.text=\r\n\ Funci\u00F3n\ que\ devuelve\ un\ tecnico\ disponible\ para\ validar\ la\ prueba\ en\ la\ fechaHora\ indicada.\r\n\ @param\ fechaHora\ Fecha\ hora\ en\ que\ se\ desea\ programar\ la\ prueba.\r\n\ @return\ Objeto\ Tecnico\ asignado\ para\ la\ prueba.\r\n
 numComments=6

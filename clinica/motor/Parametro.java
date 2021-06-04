@@ -1,15 +1,14 @@
 package clinica.motor;
 
 /**
- * Write a description of class Parametro here.
+ * Representa un comando de la aplicación. Clase generica con un parametro de tipo (T).
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public class Parametro<T>
 {
-    // instance variables - replace the example below with your own
-
+    //Representa el interface que permite convertir los strings introducidos por el usuario al tipo de destino del parametro.
     interface IConversor<T>{
         T convertir(String value);
     }
@@ -30,8 +29,6 @@ public class Parametro<T>
         this.descripcion = descripcion;
         this.valor = valorDefecto;
     }
-    
-    
 
     public Parametro(String nombre, String descripcion,T valorDefecto)
     {
@@ -77,24 +74,28 @@ public class Parametro<T>
 
     }
 
-    public void setConversor(IConversor conversor){
+    public void setConversor(IConversor conversor)
+    {
         this.conversor = conversor;
-    }//end method setConversor
+    }
 
-    public String getNombre(){
+    public String getNombre()
+    {
         return this.nombre;
-    }//end method getNombre
+    }
 
-    public void setNombre(String nombre){
+    public void setNombre(String nombre)
+    {
         this.nombre = nombre;
-    }//end method setNombre
+    }
 
-    public String getDescripcion(){
+    public String getDescripcion()
+    {
         return this.descripcion;
-    }//end method getDescripcion
+    }
 
-    public void setDescripcion(String descripcion){
+    public void setDescripcion(String descripcion)
+    {
         this.descripcion = descripcion;
-    }//end method setDescripcion
-
+    }
 }

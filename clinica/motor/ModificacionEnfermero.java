@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Write a description of class ModificacionEnfermero here.
+ * Comando que modifica un enfermero.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public class ModificacionEnfermero extends Comando
 {
@@ -22,7 +22,7 @@ public class ModificacionEnfermero extends Comando
     {
         // initialise instance variables
         super();
-         this.parametros.put("nombreUsuario", new Parametro("nombreUsuario", "Nombre de usuario",null, null));
+        this.parametros.put("nombreUsuario", new Parametro("nombreUsuario", "Nombre de usuario",null, null));
         this.parametros.put("direccionNew", new Parametro("direccionNew", "Nueva dirección", null, null));
         this.coleccionEnfermero = coleccionEnfermero;
     }

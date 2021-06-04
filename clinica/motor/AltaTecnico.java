@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 /**
- * Write a description of class AltaTecnico here.
+ * Comando que da de alta un tecnico.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public class AltaTecnico extends Comando
 {
@@ -36,6 +36,7 @@ public class AltaTecnico extends Comando
             return TipoGenero.valueOf(x);
         }));
         this.parametros.put("direccion",new Parametro<String>("direccion", "Dirección"));
+               this.parametros.put("telefono",new Parametro<String>("telefono", "Teléfono"));
         this.coleccionTecnico = coleccionTecnico;
     }
 
@@ -48,7 +49,8 @@ public class AltaTecnico extends Comando
                                       ((Parametro<LocalDate>)parametros.get("fechaNacimiento")).getValor(),
                                       ((Parametro<String>)parametros.get("dni")).getValor(),
                                       ((Parametro<TipoGenero>)parametros.get("genero")).getValor(),
-                                      ((Parametro<String>)parametros.get("direccion")).getValor());
+                                      ((Parametro<String>)parametros.get("direccion")).getValor(),
+                                      ((Parametro<String>)parametros.get("telefono")).getValor());
                                       
         if(coleccionTecnico.altaTecnico(tecnico))
             return new ResultadoComando(TipoResultadoComando.EXITO, "Técnico dado de alta correctamente");

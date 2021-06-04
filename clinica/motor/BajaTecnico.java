@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.List;
 /**
- * Write a description of class BajaTecnico here.
+ * Comando que da de baja un tecnico.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public class BajaTecnico extends Comando
 {

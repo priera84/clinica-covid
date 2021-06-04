@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Write a description of class ColeccionPersona here.
+ * Clase que representa una coleccion de personas.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public class ColeccionPersona
 {
@@ -15,7 +15,7 @@ public class ColeccionPersona
     protected  List<Persona> listaPersonas;
 
     /**
-     * Constructor for objects of class ColeccionPersona
+     * Constructor 
      */
     public ColeccionPersona()
     {
@@ -24,10 +24,10 @@ public class ColeccionPersona
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Función que da de alta una persona en la colección.
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param  persona Objeto persona para agregar a la colección.
+     * @return    Si se ha agregado correctamente a la colección.
      */
     protected Boolean altaPersona(Persona persona)
     {
@@ -40,6 +40,11 @@ public class ColeccionPersona
         return false;
     }
 
+    /**
+     * Busca una persona en la colección usando el dni.
+     * @param dni DNI de la persona.
+     * @return Objeto persona encontrado.
+     */
     public Persona getByDni(String dni)
     {
         if(listaPersonas.size() > 0)
@@ -54,6 +59,11 @@ public class ColeccionPersona
         return null;
     }
 
+    /**
+     * Función que da de baja a una persona en el sistema.
+     * @param dni DNI de la persona a dar de baja.
+     * @return Booleano indicando si se ha dado de baja a la persona.
+     */
     protected Boolean bajaPersona(String dni)
     {
         if(listaPersonas.size() > 0)
@@ -87,6 +97,10 @@ public class ColeccionPersona
         return false;
     }    
 
+    /**
+     * Función que devuelve en un string la descripción de todas las personas de la colección.
+     * @return String con la descripción de todas las personas de la colección.
+     */
     public String getDescripcionPersonas()
     {
         if(listaPersonas.size() > 0)

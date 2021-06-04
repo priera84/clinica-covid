@@ -7,10 +7,10 @@ import java.util.List;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 /**
- * Write a description of class AltaEnfermero here.
+ * Comando que da de alta un enfermero.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public class AltaEnfermero extends Comando
 {
@@ -37,7 +37,7 @@ public class AltaEnfermero extends Comando
             return TipoGenero.valueOf(x);
         }));
         this.parametros.put("direccion",new Parametro<String>("direccion", "Dirección"));
-        
+               this.parametros.put("telefono",new Parametro<String>("telefono", "Teléfono"));
         
         this.coleccionEnfermero = coleccionEnfermero;
     }
@@ -51,7 +51,8 @@ public class AltaEnfermero extends Comando
                                       ((Parametro<LocalDate>)parametros.get("fechaNacimiento")).getValor(),
                                       ((Parametro<String>)parametros.get("dni")).getValor(),
                                       ((Parametro<TipoGenero>)parametros.get("genero")).getValor(),
-                                      ((Parametro<String>)parametros.get("direccion")).getValor());
+                                      ((Parametro<String>)parametros.get("direccion")).getValor(),
+                                      ((Parametro<String>)parametros.get("telefono")).getValor());
         if(coleccionEnfermero.altaEnfermero(enfermero))
             return new ResultadoComando(TipoResultadoComando.EXITO, "Enfermero dado de alta correctamente");
         else 

@@ -2,10 +2,10 @@ package clinica.logica;
 
 
 /**
- * Enumeration class TipoResultadoPrueba - write a description of the enum class here
+ * Enumeration class TipoResultadoPrueba - Indica el resultado de le prueba
  *
- * @author (your name here)
- * @version (version number or date here)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public enum TipoResultadoPrueba
 {

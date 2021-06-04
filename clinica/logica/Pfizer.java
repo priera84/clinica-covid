@@ -2,26 +2,35 @@ package clinica.logica;
 
 import java.time.LocalDateTime;
 /**
- * Write a description of class Pfizer here.
+ * Representa una vacuna Pfizer.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public class Pfizer extends Vacuna
 {   
     /**
-     * Constructor for objects of class Pfizer
+     * Constructor 
+     * @param paciente Objeto del paciente asignado a la vacuna.
      */
     public Pfizer(Paciente paciente)
     {
         super(paciente);
     }   
 
+    /**
+     * Devuelve el número de dosis para considerar completa la inmunidad del paciente.
+     * @return Número entero que representa el número de dosis para considerar completa la inmunidad del paciente.
+     */
     public int getNumeroDosis()
     {
         return 2;
     }
 
+    /**
+     * Función que devuelve una copia del objeto.
+     * @return Objeto vacuna del mismo tipo con el mismo paciente asignado.
+     */
     public Vacuna getCopia()
     {
         return new Pfizer(this.getPacienteAsignado());        

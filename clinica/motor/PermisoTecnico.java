@@ -2,10 +2,10 @@ package clinica.motor;
 
 
 /**
- * Write a description of class Tecnico here.
+ * Clase que contiene los comandos que un usuario Tecnico puede ejecutar.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public class PermisoTecnico extends ColeccionComando
 {

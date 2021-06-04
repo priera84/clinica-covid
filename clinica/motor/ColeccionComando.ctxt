@@ -1,11 +1,12 @@
 #BlueJ class context
 comment0.target=ColeccionComando
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ ColeccionComando\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Representa\ una\ colecci\u00F3n\ de\ comandos.\ Se\ utiliza\ para\ restringir\ los\ comandos\ que\ puede\ ejecutar\ cada\ usuario.\r\n\r\n\ @author\ Pedro\ Riera\r\n\ @version\ 1.0.0.0\r\n
 comment1.params=
 comment1.target=ColeccionComando()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ ColeccionComando\r\n
+comment1.text=\r\n\ Constructor\ \r\n
 comment2.params=comando
 comment2.target=java.lang.Boolean\ RegistraComando(Comando)
+comment2.text=\r\n\ Registra\ un\ comando\ en\ la\ colecci\u00F3n.\r\n\ @param\ comando\ a\ registrar.\r\n\ @return\ Booleano\ que\ indica\ si\ ha\ podido\ registrarse\ un\ comando\ en\ la\ colecci\u00F3n.\r\n
 comment3.params=
 comment3.target=java.util.List\ getComandos()
 comment4.params=indice

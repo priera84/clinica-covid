@@ -1,10 +1,10 @@
 import clinica.interfaces.*;
 
 /**
- * Write a description of class Aplicacion here.
+ * Punto de entrada la ejecución de la aplicación en modo consola.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public class Aplicacion
 {
