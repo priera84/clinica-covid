@@ -44,6 +44,12 @@ public class Tecnico extends Usuario
         this.coleccionPrueba.borrarPrueba(prueba);
     }
     
+    public Boolean asignarPrueba(Prueba prueba)
+    {
+        return this.coleccionPrueba.addPrueba(prueba);
+    }
+
+    
     /**
      * Función que devuelve los pacientes asignados al técnico, para pruebas diagnósticas.
      * @return ColeccionPaciente con todos los pacientes asignados.

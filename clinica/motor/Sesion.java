@@ -16,7 +16,7 @@ public class Sesion extends ColeccionComando
     {
         super();
         // initialise instance variables
-       RegistraComando(new Login());
+       RegistraComando(new Login());       
     }
 
     

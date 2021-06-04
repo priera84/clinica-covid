@@ -25,11 +25,11 @@ public class ColeccionPrueba
     {
         return this.listaPruebas.add(prueba);
     }
-    
+
     public void borrarPrueba(Prueba prueba)
     {
         if(listaPruebas.contains(prueba))
-          listaPruebas.remove(prueba);
+            listaPruebas.remove(prueba);
     }
 
     public Boolean existePCRMenos15dias()
@@ -76,12 +76,14 @@ public class ColeccionPrueba
             ColeccionPaciente listaPacientes = new ColeccionPaciente();
             for (Prueba prueba: listaPruebas)
             {
-                Paciente paciente =prueba.getPacienteAsignado();
+                Paciente paciente = prueba.getPacienteAsignado();
                 if(paciente != null)
                 {
-                    listaPacientes.agregarPaciente(paciente);
+                    if(listaPacientes.getByDni(paciente.getDni()) == null)
+                        listaPacientes.agregarPaciente(paciente);
                 }
             }
+            return listaPacientes;
         }           
         return null;
     }

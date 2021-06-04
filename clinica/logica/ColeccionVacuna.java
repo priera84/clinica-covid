@@ -78,9 +78,11 @@ public class ColeccionVacuna
                 Paciente paciente = vacuna.getPacienteAsignado();
                 if(paciente != null)
                 {
-                    listaPacientes.agregarPaciente(paciente);
+                    if(listaPacientes.getByDni(paciente.getDni()) == null)
+                        listaPacientes.agregarPaciente(paciente);
                 }
             }
+            return listaPacientes;
         }           
         return null;
     }

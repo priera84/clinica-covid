@@ -17,5 +17,8 @@ public class PermisoTecnico extends ColeccionComando
     {
         super();
         RegistraComando(new VerPacientesAsignado(tecnico));
+        
+            
+        RegistraComando(new Logout());
     }
 }

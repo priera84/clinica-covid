@@ -43,7 +43,10 @@ public class ColeccionPaciente extends ColeccionPersona
 
     public Boolean addListaPacientes(ColeccionPaciente coleccionPaciente)
     {
-        return this.listaPersonas.addAll(coleccionPaciente.listaPersonas);
+        if(coleccionPaciente != null)
+            return this.listaPersonas.addAll(coleccionPaciente.listaPersonas);
+        else 
+            return true;
     }
 
     public String getListaPacientes()

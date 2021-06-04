@@ -72,13 +72,13 @@ public abstract class Prueba
     public float diasTranscurridosPrueba()
     {
         LocalDate ahora = LocalDate.now(ZoneId.of("Europe/Madrid"));
-        return java.time.temporal.ChronoUnit.DAYS.between(this.fechaHora, ahora );
+        return java.time.temporal.ChronoUnit.DAYS.between(this.fechaHora.toLocalDate(), ahora );
     }
 
     public float mesesTranscurridosPrueba()
     {
         LocalDate ahora = LocalDate.now(ZoneId.of("Europe/Madrid"));
-        return java.time.temporal.ChronoUnit.MONTHS.between(this.fechaHora, ahora );
+        return java.time.temporal.ChronoUnit.MONTHS.between(this.fechaHora.toLocalDate(), ahora );
     }
 
     public abstract Boolean positivoCovid(); 

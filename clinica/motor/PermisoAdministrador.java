@@ -51,6 +51,10 @@ public class PermisoAdministrador extends ColeccionComando
         RegistraComando(new ConsultarStockPrueba(clinica.getStockPrueba()));
         RegistraComando(new ModificacionStockPrueba(clinica.getStockPrueba()));
         
+        
+        RegistraComando(new Logout());
+        
+        
     }
 
 }

@@ -124,4 +124,10 @@ public class Clinica
             }
         }
     }
+    
+    public Boolean cerrarSesion()
+    {
+        usuarioActivo = null;
+        return true;
+    }
 }

@@ -44,7 +44,7 @@ public class Consola
         switch(resultadoComando.getTipoResultadoComando())
         {
             case EXITO:
-                System.out.println(resultadoComando.getMensajeResultado());
+                System.out.println(resultadoComando.getMensajeResultado());                
                 break;
             case ERROR:
                 System.out.println(resultadoComando.getMensajeResultado());
@@ -54,8 +54,10 @@ public class Consola
                 ejecutarComando(resultadoComando.getSiguienteComando());
                 break;
             case NUEVA_COLECCION_COMANDO:
-                coleccionComando = resultadoComando.getSiguienteColeccionComando();            
+                coleccionComando = resultadoComando.getSiguienteColeccionComando();                 
         }
+        System.out.println("Pulse una tecla para continuar...");
+        new java.util.Scanner(System.in).nextLine();
     }
 
     private void ejecutarComando(Comando comando)
@@ -65,7 +67,7 @@ public class Consola
         if(parametros != null && parametros.size() > 0)
         {
             Scanner teclado = new Scanner (System.in);
-            
+
             System.out.println("A continuación se le solicitarán los parámetros necesarios para ejectuar el comando: "+ comando.getDescripcion());
 
             for (Object valor: parametros.values()) {                                     
@@ -73,10 +75,19 @@ public class Consola
                 Boolean resultadoSetValor = false;
                 do
                 {
+                    Object valorDefecto = parametro.getValor();
+                    if(valorDefecto != null)
+                        System.out.println(parametro.getDescripcion() + " [" + valorDefecto.toString() + "]"+ ": ");
+                    else
                     System.out.println(parametro.getDescripcion() + ": ");
+
                     String valorTeclado = teclado.nextLine();
-                    
-                    resultadoSetValor = parametro.setValor(valorTeclado);                    
+
+                    if(valorTeclado.equals("") && valorDefecto != null)
+                        resultadoSetValor = true;
+                    else
+                        resultadoSetValor = parametro.setValor(valorTeclado);                    
+                        
                     if(!resultadoSetValor)
                         System.out.println("Valor incorrecto");
 
@@ -95,16 +106,29 @@ public class Consola
 
     public void iniciar()
     {
-        int opcion;
-        Scanner teclado = new Scanner (System.in);
-        do{
+        int opcion = 0;
 
+        do{
             imprimirComandos();
             System.out.println("\n0.- Salir de la aplicación");   
-            System.out.print("Seleccionar opción ==>");
+            System.out.println("Seleccionar opción ==>");
 
+            Boolean error = false;
             // pedir opción seleccionada
-            opcion=teclado.nextInt();    
+            do{
+                try
+                {
+                    Scanner teclado = new Scanner (System.in);
+                    opcion=teclado.nextInt();    
+                    error = false;
+                }
+                catch(java.util.InputMismatchException e)
+                {
+                    error = true;                    
+                    System.out.println("Opción incorrecta");
+                    System.out.println("Seleccionar opción ==>");
+                }
+            }while(error);
 
             if(opcion != 0)
             {

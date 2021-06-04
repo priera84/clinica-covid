@@ -49,6 +49,8 @@ public class AsignarPruebaPaciente extends Comando
         if (paciente != null)
         {
             Prueba prueba = planificador.getPrueba(tipoPrueba, fechaHora, paciente);
+            paciente.asignarPrueba(prueba);
+            
             if(planificador.programarPrueba(prueba))
             {
                 return new ResultadoComando(TipoResultadoComando.EXITO, "Prueba programada:\n" + prueba.getDescripcion());

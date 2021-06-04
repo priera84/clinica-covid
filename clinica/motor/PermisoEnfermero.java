@@ -14,13 +14,15 @@ public class PermisoEnfermero extends ColeccionComando
      * Constructor for objects of class Enfermero
      * @param enfermero loggeado en el sistema
      */
-    public PermisoEnfermero(clinica.logica.Enfermero enfermero)
+    public PermisoEnfermero(Enfermero enfermero)
     {
         super();
         RegistraComando(new VerPacientesAsignado(enfermero));
-        
-//        RegistraComando(new RegistroPrueba(enfermero));
+        //RegistraComando(new VerPacientesAsignado(enfermero));
 //        RegistraComando(new RegistroVacunacion(enfermero));
+
+    
+        RegistraComando(new Logout());
     }
 
     

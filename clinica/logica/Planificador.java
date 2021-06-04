@@ -72,7 +72,10 @@ public class Planificador
 
         Tecnico tecnico = buscarTecnicoPrueba(fechaHoraPrueba);
         if(tecnico != null)
+        {
             prueba.asignarTecnico(tecnico);
+            tecnico.asignarPrueba(prueba);
+        }
         else 
             resultado = false;
 
@@ -80,7 +83,10 @@ public class Planificador
         {
             Enfermero enfermero = buscarEnfermeroPrueba(fechaHoraPrueba);
             if(enfermero != null)
+            {
                 prueba.asignarEnfermero(enfermero);
+                enfermero.asignarPrueba(prueba);
+            }
             else resultado = false;
         }
 
@@ -126,7 +132,7 @@ public class Planificador
                     paciente.asignarVacuna(vacuna2Dosis);
                     enfermero.asignarVacuna(vacuna2Dosis);
                     vacuna2Dosis.setFechaHora(enfermero.getFechaHoraDia(fechaSegundaDosis));                    
-                    
+
                     resultado = true;
                 }                
                 else 
