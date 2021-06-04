@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
 /**
- * Write a description of class StockVacuna here.
+ * Clase abstracta que representa un almacen/stock.
  *
  * @author Pedro Riera
  * @version 1.0.0.0
@@ -21,7 +21,11 @@ public abstract class Stock
         this.listaRegistroStock = new ArrayList<RegistroStock>();
     }
 
-    
+    /**
+     * Agrega un producto al stock.
+     * @param registroStock Representa un producto que se añade al stock.
+     * @return Booleano indicando que se ha podido agregar al stock.
+     */
     public Boolean registrarStock(RegistroStock registroStock)
     {
         if(registroStock.getUnidadesRegistradas() == 0)
@@ -31,6 +35,11 @@ public abstract class Stock
 
     }    
     
+    /**
+     * Modifica el stock de un producto.
+     * @param registroStockNuevo Representa el objeto producto que reempleza a los anteriormente registrados.
+     * @return Booleano indicando que se ha podido modificar el stock.
+     */
     public Boolean reemplazarStock(RegistroStock registroStockNuevo)
     {
         if(listaRegistroStock.size() >= 0)
@@ -51,4 +60,10 @@ public abstract class Stock
         
         return listaRegistroStock.add(registroStockNuevo);
     }
+    
+    /**
+     * Función abstracta que devuelve el estado del stock.
+     * @return String que describe la cantidad de producto de cada tipo.
+     */
+    public abstract String consultarStock();
 }

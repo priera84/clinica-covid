@@ -1,8 +1,7 @@
 package clinica.motor;
 
-
 /**
- * Write a description of class ResultadoComando here.
+ * Clase que representa el resultado de la ejecución de un comando.
  *
  * @author Pedro Riera
  * @version 1.0.0.0

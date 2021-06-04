@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
 /**
- * Write a description of class StockVacuna here.
+ * Clase que representa el almacén/stock de vacunas.
  *
  * @author Pedro Riera
  * @version 1.0.0.0
@@ -19,7 +19,13 @@ public class StockVacuna extends Stock
         super();
     }
 
-    
+    /**
+     * Función que permite modificar el stock registrado de una vacuna.
+     * @param fechaModificacion Fecha en que se registra la modificación.
+     * @param unidadesRegistradas Número de unidades registradas para esa vacuna.
+     * @param marcaVacuna Marca de la vacuna registrada.
+     * @return Booleano indicando si se ha podido modificar el stock de la vacuna.
+     */     
     public Boolean modificarVacuna(LocalDate fechaModificacion, int unidadesRegistradas, TipoMarcaVacuna marcaVacuna)
     {                
         //Agregamos registro con número actual de vacunas.
@@ -27,8 +33,11 @@ public class StockVacuna extends Stock
         return reemplazarStock(registroVacuna);        
     }
 
-   
-
+    /**
+     * Función que permite sacar del stock una vacuna.
+     * @param marcaVacuna Marca de la vacuna registrada.
+     * @return Booleano indicando si se ha podido extraer la vacuna del stock.
+     */    
     public Boolean sacarVacunaMarca(TipoMarcaVacuna marcaVacuna)
     {
         if(listaRegistroStock.size() >= 0)
@@ -41,7 +50,11 @@ public class StockVacuna extends Stock
         return false;
     }
 
-    public String consultarStockVacuna()
+    /**
+     * Función que devuelve el estado del stock de vacunas.
+     * @return String que describe la cantidad de vacunas en stock de cada tipo.
+     */
+    public String consultarStock()
     {
         Integer totalPfizer = new Integer(0);
         Integer totalModerna  = new Integer(0);

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.List;
 /**
- * Clase que representa un comando para dar de baja un administrador.
+ * Comando que da de baja un administrador.
  *
  * @author Pedro Riera
  * @version 1.0.0.0

@@ -5,17 +5,17 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Write a description of class ColeccionComando here.
+ * Representa una colección de comandos. Se utiliza para restringir los comandos que puede ejecutar cada usuario.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public class ColeccionComando
 {
     private  List<Comando> listaComandos;
 
     /**
-     * Constructor for objects of class ColeccionComando
+     * Constructor 
      */
     public ColeccionComando()
     {
@@ -23,6 +23,11 @@ public class ColeccionComando
         listaComandos = new ArrayList<Comando>();
     }
 
+    /**
+     * Registra un comando en la colección.
+     * @param comando a registrar.
+     * @return Booleano que indica si ha podido registrarse un comando en la colección.
+     */
     protected Boolean RegistraComando(Comando comando)
     { 
         if(!listaComandos.contains(comando))
@@ -43,7 +48,7 @@ public class ColeccionComando
     {
         if(indice > 0 && indice <= listaComandos.size())
             return listaComandos.get(indice -1);
-            
+
         return null;
     }
 }

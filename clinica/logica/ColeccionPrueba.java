@@ -5,17 +5,17 @@ import java.util.*;
 import java.time.LocalDate;
 
 /**
- * Write a description of class ColeccionPrueba here.
+ * Representa una colección de pruebas.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public class ColeccionPrueba
 {
     private List<Prueba> listaPruebas;
 
     /**
-     * Constructor for objects of class ColeccionPrueba
+     * Constructor 
      */
     public ColeccionPrueba()
     {
@@ -23,41 +23,66 @@ public class ColeccionPrueba
         this.listaPruebas = new ArrayList<Prueba>();
     }
 
+    /**
+     * Agrega una prueba a la colección.
+     * @param prueba Objeto prueba que se agrega a la colección.
+     * @return Booelano indicando si se ha agregado a la colección.
+     */
     public Boolean addPrueba(Prueba prueba)
     {
         return this.listaPruebas.add(prueba);
     }
 
+    /**
+     * Borra una prueba a la colección.
+     * @param prueba Objeto prueba que se borra de la colección.
+     * @return Booelano indicando si se ha borrado a la colección.
+     */
     public void borrarPrueba(Prueba prueba)
     {
         if(listaPruebas.contains(prueba))
             listaPruebas.remove(prueba);
     }
 
-    public Boolean existePCRMenos15dias()
+    /**
+     * Indica si existe una prueba PCR realizada en los últimos 15 días.
+     * @param fechaHora Fecha hora desde la que se quieren contar los dias transcurridos.
+     * @return Booelano indicando si existe una prueba PCR realizada en los últimos 15 días.
+     */
+    public Boolean existePCRMenos15dias(LocalDateTime fechaHora)
     {
         if(listaPruebas.size() > 0)
             for (Prueba prueba: listaPruebas)
             {
-                if((prueba instanceof PCR) && (prueba.diasTranscurridosPrueba() < 15))
+                if((prueba instanceof PCR) && (prueba.diasTranscurridosPrueba(fechaHora) < 15))
                     return true;
             }
 
         return false;
     }
 
-    public Boolean existeSerologicoMenos6Meses()
+    /**
+     * Indica si existe una prueba Serológica realizada en los últimos 6 meses.
+     * @param fechaHora Fecha hora desde la que se quieren contar los meses transcurridos.
+     * @return Booelano indicando si existe una prueba Serológica realizada en los últimos 6 meses.
+     */
+    public Boolean existeSerologicoMenos6Meses(LocalDateTime fechaHora)
     {
         if(listaPruebas.size() > 0)
             for (Prueba prueba: listaPruebas)
             {
-                if((prueba instanceof Serologico) && (prueba.mesesTranscurridosPrueba() < 6))
+                if((prueba instanceof Serologico) && (prueba.mesesTranscurridosPrueba(fechaHora) < 6))
                     return true;
             }
 
         return false;
     }
 
+    /**
+     * Función que devuelve el numero de pruebas realizadas en la semana de la fecha que se pasa por parámetro.
+     * @param fechaHora Fecha hora en la que se calcula el numero de pruebas de la semana.
+     * @return Integer con el número de pruebas.
+     */
     public int getNumeroPruebasDeSemana(LocalDateTime fechaHora)
     {
         int totalPruebasSemana = 0;        
@@ -70,6 +95,10 @@ public class ColeccionPrueba
         return totalPruebasSemana;
     }
 
+    /**
+     * Devuelve una colección con todos los pacientes asignados a las pruebas de la colección.
+     * @return ColeccionPaciente con todos los pacientes asignados a las pruebas de la colección.
+     */
     public ColeccionPaciente getPacientesAsignados()
     {
 
@@ -81,8 +110,7 @@ public class ColeccionPrueba
                 Paciente paciente = prueba.getPacienteAsignado();
                 if(paciente != null)
                 {
-                    if(listaPacientes.getByDni(paciente.getDni()) == null)
-                        listaPacientes.agregarPaciente(paciente);
+                    listaPacientes.altaPaciente(paciente);
                 }
             }
             return listaPacientes;
@@ -90,6 +118,10 @@ public class ColeccionPrueba
         return null;
     }
 
+    /**
+     * Funcion que devuelve la descripcion de las pruebas de la colección.
+     * @return String con la descripcion de las pruebas de la colección.
+     */
     public String getDescripcion()
     {
 
@@ -104,6 +136,11 @@ public class ColeccionPrueba
         }           
         return null;
     }
+
+    /**
+     * Devuelve una prueba de la colección pendiente de actualizar su resultado.
+     * @return Prueba que se ha realizado pero que tiene pendiente de actualizar su resultado.
+     */
     public Prueba getPruebaPendienteValidacion()
     {
         if(listaPruebas.size() > 0)
@@ -116,8 +153,12 @@ public class ColeccionPrueba
         }
         return null;
     }
-    
-     public Prueba getPruebaPendiente(LocalDate fecha)
+
+    /**
+     * Devuelve la prueba programada en la fecha indicada por parámetro, y que se está pendiente de realizar.
+     * @return Prueba que esta pendiente de realizarse en la fecha indicada.
+     */
+    public Prueba getPruebaPendiente(LocalDate fecha)
     {
         if(listaPruebas.size() > 0)
         {

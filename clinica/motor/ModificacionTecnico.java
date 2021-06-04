@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.List;
 /**
- * Write a description of class ModificacionTecnico here.
+ * Comando que modifica un tecnico.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public class ModificacionTecnico extends Comando
 {

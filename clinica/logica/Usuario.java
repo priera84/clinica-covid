@@ -25,10 +25,11 @@ public abstract class Usuario extends Persona
      * @param  dni   Documento Nacional de Identidad de la persona.
      * @param  genero   Género de la persona.
      * @param  direccion Direcciòn de la persona.
+     * @param  telefono Teléfono de la persona.
      */   
-    public Usuario(String nombreUsuario, String clave, TipoUsuario tipoUsuario, String nombre, String apellidos, LocalDate fechaNacimiento, String dni, TipoGenero genero, String direccion)
+    public Usuario(String nombreUsuario, String clave, TipoUsuario tipoUsuario, String nombre, String apellidos, LocalDate fechaNacimiento, String dni, TipoGenero genero, String direccion, String telefono)
     {
-        super(nombre, apellidos, fechaNacimiento, dni, genero, direccion);
+        super(nombre, apellidos, fechaNacimiento, dni, genero, direccion, telefono);
         this.nombreUsuario = nombreUsuario;
         this.clave = clave;
         this.tipoUsuario = tipoUsuario;
@@ -36,17 +37,22 @@ public abstract class Usuario extends Persona
     
     /**
      * Devuelve el tipo de usuario.
-     * @return el tipo de usuario (TECNICO, ENFERMERO, O ADMINISTRADOR)
+     * @return El tipo de usuario (TECNICO, ENFERMERO, O ADMINISTRADOR)
      */
     public TipoUsuario getTipoUsuario()
     {
         return this.tipoUsuario;
     }
     
+    /**
+     * Función que devuelve el nombre de usuario.
+     * @return El nombre de usuario.
+     */    
     public String getNombreUsuario()
     {
         return this.nombreUsuario;
     }
+    
     /**
      * Valida que el nombre de usuario y la clave introducida coincide con la registrada por el usuario.
      * Permite loggearse en el sistema.

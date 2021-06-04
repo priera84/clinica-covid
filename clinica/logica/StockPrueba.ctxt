@@ -1,11 +1,16 @@
 #BlueJ class context
 comment0.target=StockPrueba
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ StockPrueba\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Representa\ un\ almacen/stock\ de\ pruebas\ diagn\u00F3sticas.\r\n\r\n\ @author\ Pedro\ Riera\r\n\ @version\ 1.0.0.0\r\n
 comment1.params=
 comment1.target=StockPrueba()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ StockPrueba\r\n
-comment2.params=fechaModificacion\ unidadesRegistradas\ marcaPrueba
+comment2.params=fechaModificacion\ unidadesRegistradas\ tipoPrueba
 comment2.target=java.lang.Boolean\ modificarPrueba(java.time.LocalDate,\ int,\ TipoPrueba)
+comment2.text=\r\n\ Funci\u00F3n\ que\ permite\ modificar\ el\ stock\ registrado\ de\ una\ prueba.\r\n\ @param\ fechaModificacion\ Fecha\ en\ que\ se\ registra\ la\ modificaci\u00F3n.\r\n\ @param\ unidadesRegistradas\ N\u00FAmero\ de\ unidades\ registradas\ para\ esa\ prueba.\r\n\ @param\ tipoPrueba\ Tipo\ de\ prueba\ registrado.\r\n\ @return\ Booleano\ indicando\ si\ se\ ha\ podido\ modificar\ el\ stock\ de\ la\ prueba.\r\n
 comment3.params=
 comment3.target=java.lang.String\ consultarStock()
-numComments=4
+comment3.text=\r\n\ Funci\u00F3n\ que\ devuelve\ el\ estado\ del\ stock\ de\ pruebas.\r\n\ @return\ String\ que\ describe\ la\ cantidad\ de\ pruebas\ en\ stock\ de\ cada\ tipo.\r\n
+comment4.params=tipoPrueba
+comment4.target=java.lang.Boolean\ sacarPruebaTipo(TipoPrueba)
+comment4.text=\r\n\ Funci\u00F3n\ que\ descuenta\ una\ prueba\ del\ inventario\ para\ su\ consumo.\r\n\ @param\ tipoPrueba\ Tipo\ de\ la\ prueba\ que\ se\ desea\ consumir.\r\n\ @return\ Booleano\ que\ indica\ si\ hay\ stock\ de\ la\ prueba\ deseada.\r\n
+numComments=5

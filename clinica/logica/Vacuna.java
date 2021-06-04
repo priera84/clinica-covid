@@ -19,13 +19,17 @@ public abstract class Vacuna
     private TipoEstado estado;
 
     /**
-     * Constructor for objects of class Prueba
+     * Constructor
      */
     public Vacuna()
     {
         this.estado = TipoEstado.CREADO;
     }
 
+    /**
+     * Constructor
+     * @param paciente Paciente que se le asigna a la vacuna.
+     */
     public Vacuna(Paciente paciente)
     {
         this.estado = TipoEstado.CREADO;
@@ -33,49 +37,66 @@ public abstract class Vacuna
         this.asignarPaciente(paciente);
     }
 
+    /**
+     * Procedimiento que asinga un paciente a la vacuna.
+     * @param paciente Paciente que se le asigna a la vacuna.
+     */
     public void asignarPaciente(Paciente paciente)
     {
         this.pacienteAsignado = paciente;
     }
 
+    /**
+     * Procedimiento que asinga un enfermero a la vacuna.
+     * @param paciente Paciente que se le asigna a la vacuna.
+     */
     public void asignarEnfermero(Enfermero enfermero)
     {
         this.enfermeroAsignado = enfermero;
     }
 
-    public float diasTranscurridosVacunacion()
-    {
-        LocalDate ahora = LocalDate.now(ZoneId.of("Europe/Madrid"));
-        return java.time.temporal.ChronoUnit.DAYS.between(this.fechaHora.toLocalDate(), ahora );
-    }
-
-    public float mesesTranscurridosVacunacion()
-    {
-        LocalDate ahora = LocalDate.now(ZoneId.of("Europe/Madrid"));
-        return java.time.temporal.ChronoUnit.MONTHS.between(this.fechaHora.toLocalDate(), ahora );
-    }
-
+    /**
+     * Devuelve la fecha hora asignada a la vacuna.
+     * @return Fecha hora asignada a la vacunación.
+     */
     public LocalDateTime getFechaHora()
     {
         return this.fechaHora;
     }
 
+    /**
+     * Devuelve el estado de la vacunación.
+     * @return Estado de la vacunación.
+     */
     public TipoEstado getEstado()
     {
         return this.estado;
     }    
 
+    /**
+     * Asigna el estado de la vacunación.
+     * @param estado TipoEstado 
+     */
     public void setEstado(TipoEstado estado)
     {
         this.estado = estado;
     }
-    
+
+    /**
+     * Asigna la fechaHora de la vacunación.
+     * @param fechaHora Fecha hora de la vacunación.
+     */
     public void setFechaHora(LocalDateTime fechaHora)
     {
         this.fechaHora = fechaHora;
         this.setEstado(TipoEstado.PROGRAMADO);
     }
 
+    /**
+     * Devuvele si la vacunación se realiza en la misma semana que la fecha hora pasada por parámetro.
+     * @param fechaHora Fecha hora que se desea realizar la vacunación.
+     * @return Booleano indicando si la vacunación se realiza en la misma semana que la fecha pasada por parámetro.
+     */
     public Boolean perteneceASemana(LocalDateTime fechaHora)
     {
         TemporalField diaSemana = WeekFields.of(Locale.FRANCE).dayOfWeek();
@@ -84,6 +105,10 @@ public abstract class Vacuna
         return (this.fechaHora.isBefore(fechaFinSemana) && this.fechaHora.isAfter(fechaInicioSemana));        
     }
 
+    /**
+     * Devuelve una cadena que representa los datos del objeto vacuna.
+     * @return String que contiene la descripción de la vacuna.
+     */
     public String getDescripcion()
     {
         StringBuilder sb = new StringBuilder();
@@ -98,19 +123,31 @@ public abstract class Vacuna
             sb.append(" Johnson and Johnson");
 
         sb.append("\nEstado vacuna:" + this.estado.toString());
-        
+
         return sb.toString();
     }
 
+    /**
+     * Devuelve el paciente asignado a la vacuna.
+     * @return Objeto paciente asignado a la vacuna.
+     */
     public Paciente getPacienteAsignado()
     {
         return pacienteAsignado;
     }
 
+    /**
+     * Devuelve el enfermero asignado a la vacuna.
+     * @return Objeto enfermero asignado a la vacuna.
+     */
     public Enfermero getEnfermeroAsignado()
     {
         return this.enfermeroAsignado;
     }
+
+    /**
+     * Desasigna la vacuna del paciente y del enfermero.
+     */
     public void desasignarVacuna()
     {
         if(this.pacienteAsignado != null)
@@ -125,9 +162,17 @@ public abstract class Vacuna
             this.enfermeroAsignado = null;
         }       
     }
-    
+
+    /**
+     * Devuelve el número de dosis para considerar completa la inmunidad del paciente.
+     * @return Número entero que representa el número de dosis para considerar completa la inmunidad del paciente.
+     */
     public abstract int getNumeroDosis();
-    
+
+    /**
+     * Función que devuelve una copia del objeto.
+     * @return Objeto vacuna del mismo tipo con el mismo paciente asignado.
+     */
     public abstract Vacuna getCopia();
-    
+
 }

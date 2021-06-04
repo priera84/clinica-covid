@@ -8,25 +8,27 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 
 /**
- * Write a description of class Consola here.
+ * Clase que representa una interfaz de tipo consola.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public class Consola
 {
     private int totalComandosMostrados = 0;
-    // instance variables - replace the example below with your own
-    ColeccionComando coleccionComando;
+    private ColeccionComando coleccionComando;
 
     /**
-     * Constructor for objects of class Consola
+     * Constructor 
      */
     public Consola()
     {
         coleccionComando = new Sesion();        
     }
 
+    /**
+     * Imprime en consola los comandos de la coleccion actual.
+     */
     private void imprimirComandos()
     {
         int indice = 1;
@@ -39,6 +41,9 @@ public class Consola
         totalComandosMostrados = indice;
     }
 
+    /**
+     * Procesa el resultado de un comando.
+     */
     private void procesarResultado(ResultadoComando resultadoComando)
     {
         switch(resultadoComando.getTipoResultadoComando())
@@ -55,11 +60,13 @@ public class Consola
                 break;
             case NUEVA_COLECCION_COMANDO:
                 coleccionComando = resultadoComando.getSiguienteColeccionComando();                 
-        }
-        System.out.println("Pulse una tecla para continuar...");
-        new java.util.Scanner(System.in).nextLine();
+        }      
     }
 
+    /**
+     * Ejecuta un comando, mostrando sus parametros y obteniendo los valores introducidos por el usuario.
+     * @param Comando que se va a ejecutar.
+     */
     private void ejecutarComando(Comando comando)
     {
         LinkedHashMap<String, Parametro> parametros = comando.getParametros();
@@ -68,7 +75,7 @@ public class Consola
         {
             Scanner teclado = new Scanner (System.in);
 
-            System.out.println("A continuación se le solicitarán los parámetros necesarios para ejectuar el comando: "+ comando.getDescripcion());
+            System.out.println("A continuación se le solicitarán los parámetros necesarios para ejectuar el comando: \n"+ comando.getDescripcion());
 
             for (Object valor: parametros.values()) {                                     
                 Parametro parametro = (Parametro)valor;
@@ -76,6 +83,9 @@ public class Consola
                 do
                 {
                     Object valorDefecto = parametro.getValor();
+                    //Cuando el parámetro tiene valor inicialmente, es porque tiene un valor por defecto y se muestra entre corchetes, 
+                    //adicionalmente, cuando se vuelve a ejecutar el mismo comando, se muestra como valor por defecto el valor introducido en la 
+                    //ejecución anterior, teniendo memoria de los últimos valores introducidos.
                     if(valorDefecto != null)
                         System.out.println(parametro.getDescripcion() + " [" + valorDefecto.toString() + "]"+ ": ");
                     else
@@ -104,6 +114,9 @@ public class Consola
         procesarResultado(resultadoComando);
     }
 
+    /**
+     * Procedimiento principal de la consola, que inicia la aplicación.
+     */
     public void iniciar()
     {
         int opcion = 0;

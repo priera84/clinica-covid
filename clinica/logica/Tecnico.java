@@ -3,10 +3,10 @@ package clinica.logica;
 import java.time.LocalDateTime;
 import java.time.LocalDate;
 /**
- * Write a description of class Tecnico here.
+ * Clase que represente un usuario Técnico.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public class Tecnico extends Usuario
 {
@@ -22,10 +22,11 @@ public class Tecnico extends Usuario
      * @param  dni   Documento Nacional de Identidad de la persona.
      * @param  genero   Género de la persona.
      * @param  direccion Dirección de la persona.
+     * @param  telefono Teléfono de la persona.
      */ 
-    public Tecnico(String nombreUsuario, String clave, String nombre, String apellidos, LocalDate fechaNacimiento, String dni, TipoGenero genero, String direccion)
+    public Tecnico(String nombreUsuario, String clave, String nombre, String apellidos, LocalDate fechaNacimiento, String dni, TipoGenero genero, String direccion, String telefono)
     {
-        super(nombreUsuario, clave, TipoUsuario.TECNICO, nombre, apellidos, fechaNacimiento, dni, genero, direccion);
+        super(nombreUsuario, clave, TipoUsuario.TECNICO, nombre, apellidos, fechaNacimiento, dni, genero, direccion, telefono);
         this.coleccionPrueba = new ColeccionPrueba();
     }
 
@@ -39,11 +40,19 @@ public class Tecnico extends Usuario
         return this.coleccionPrueba.getNumeroPruebasDeSemana(fechaHora) < 4;
     }
 
+    /**
+     * Método que desasigna al técnico una prueba asignada previamente.
+     */
     public void desasignarPrueba(Prueba prueba)
     {
         this.coleccionPrueba.borrarPrueba(prueba);
     }
     
+    
+    /**
+     * Método que asigna una prueba al técnico.
+     * @return Booleano indicando si ha podido asignarse correctamente.
+     */
     public Boolean asignarPrueba(Prueba prueba)
     {
         return this.coleccionPrueba.addPrueba(prueba);

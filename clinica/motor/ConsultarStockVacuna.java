@@ -4,7 +4,7 @@ import clinica.logica.*;
 import java.time.LocalDate;
 
 /**
- * Comando que agrega una vacuna en el inventario.
+ * Comando que consulta el inventario de una vacuna.
  *
  * @author Pedro Riera
  * @version 1.0.0.0
@@ -25,7 +25,7 @@ public class ConsultarStockVacuna extends Comando
     public ResultadoComando ejecutar()
     {
       
-        String descripcionStock = this.stockVacuna.consultarStockVacuna();
+        String descripcionStock = this.stockVacuna.consultarStock();
         if(descripcionStock != null)
         {
             return new ResultadoComando(TipoResultadoComando.EXITO, "Estado de stock: \n" + descripcionStock);

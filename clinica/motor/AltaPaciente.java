@@ -7,10 +7,10 @@ import java.util.List;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 /**
- * Write a description of class AltaPaciente here.
+ * Comando que da de alta un paciente.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public class AltaPaciente extends Comando
 {
@@ -38,6 +38,7 @@ public class AltaPaciente extends Comando
         this.parametros.put("pacienteCovid", new Parametro<Boolean>("pacienteCovid", "Paciente COVID? (true o false)", false, x-> {
                     return Boolean.getBoolean(x);
                 }));
+        this.parametros.put("telefono",new Parametro<String>("telefono", "Teléfono"));
         this.coleccionPaciente = coleccionPaciente;
     }
 
@@ -49,7 +50,8 @@ public class AltaPaciente extends Comando
                 ((Parametro<String>)parametros.get("dni")).getValor(),
                 ((Parametro<TipoGenero>)parametros.get("genero")).getValor(),
                 ((Parametro<String>)parametros.get("direccion")).getValor(),
-                ((Parametro<Boolean>)parametros.get("pacienteCovid")).getValor());
+                ((Parametro<Boolean>)parametros.get("pacienteCovid")).getValor(),
+                ((Parametro<String>)parametros.get("telefono")).getValor());
 
         if(coleccionPaciente.altaPaciente(paciente))
             return new ResultadoComando(TipoResultadoComando.EXITO, "Paciente dado de alta correctamente");

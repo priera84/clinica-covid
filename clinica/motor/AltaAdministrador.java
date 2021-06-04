@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 /**
- * Write a description of class AltaTecnico here.
+ * Comando que da de alta un administrador.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public class AltaAdministrador extends Comando
 {
@@ -36,6 +36,7 @@ public class AltaAdministrador extends Comando
             return TipoGenero.valueOf(x);
         }));
         this.parametros.put("direccion",new Parametro<String>("direccion", "Dirección"));
+        this.parametros.put("telefono",new Parametro<String>("telefono", "Teléfono"));
         
         this.coleccionAdministrador = coleccionAdministrador;
     }
@@ -49,7 +50,8 @@ public class AltaAdministrador extends Comando
                                       ((Parametro<LocalDate>)parametros.get("fechaNacimiento")).getValor(),
                                       ((Parametro<String>)parametros.get("dni")).getValor(),
                                       ((Parametro<TipoGenero>)parametros.get("genero")).getValor(),
-                                      ((Parametro<String>)parametros.get("direccion")).getValor());
+                                      ((Parametro<String>)parametros.get("direccion")).getValor(),
+                                      ((Parametro<String>)parametros.get("telefono")).getValor());
                                       
         if(coleccionAdministrador.altaAdministrador(administrador))
             return new ResultadoComando(TipoResultadoComando.EXITO, "Admministrador dado de alta correctamente");

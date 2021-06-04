@@ -51,6 +51,6 @@ public class Login extends Comando
 
     public String getDescripcion()
     {
-        return "Loggin en el sistema";
+        return "Login en el sistema";
     }   
 }

@@ -10,8 +10,8 @@ import java.time.format.DateTimeFormatter;
 /**
  * Clase que representa un comando que permite programar una prueba para un paciente.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pedro Riera
+ * @version 1.0.0.0
  */
 public class AsignarPruebaPaciente extends Comando
 {
@@ -43,21 +43,35 @@ public class AsignarPruebaPaciente extends Comando
         String dni = ((Parametro<String>)parametros.get("dni")).getValor();
         LocalDateTime fechaHora = ((Parametro<LocalDateTime>)parametros.get("fechaHora")).getValor();
         TipoPrueba tipoPrueba = ((Parametro<TipoPrueba>)parametros.get("tipoPrueba")).getValor();
-        
+
         Paciente paciente = (Paciente)coleccionPaciente.getByDni(dni);
-        
+
         if (paciente != null)
         {
-            Prueba prueba = planificador.getPrueba(tipoPrueba, fechaHora, paciente);
-            paciente.asignarPrueba(prueba);
-            
-            if(planificador.programarPrueba(prueba))
+            Prueba prueba = planificador.getPrueba(tipoPrueba, fechaHora);
+
+            if(prueba != null)
             {
-                return new ResultadoComando(TipoResultadoComando.EXITO, "Prueba programada:\n" + prueba.getDescripcion());
+                if(paciente.asignarPrueba(prueba, fechaHora))
+                {
+
+                    if(planificador.programarPrueba(prueba))
+                    {
+                        return new ResultadoComando(TipoResultadoComando.EXITO, "Prueba programada:\n" + prueba.getDescripcion());
+                    }
+                    else
+                    {                
+                        return new ResultadoComando(TipoResultadoComando.ERROR, "No hay enfermeros y/o técnicos disponibles para realizar la prueba");
+                    }
+                }
+                else {
+                    paciente.desasignarPrueba(prueba);
+                    return new ResultadoComando(TipoResultadoComando.ERROR, "Paciente no cumple con restricciones de tiempo");
+                }
             }
             else
-            {                
-                return new ResultadoComando(TipoResultadoComando.ERROR, "No hay enfermeros y/o técnicos disponibles para realizar la prueba");
+            {
+                return new ResultadoComando(TipoResultadoComando.ERROR, "No hay stock de la prueba seleccionada");
             }
         }
         else
@@ -65,7 +79,6 @@ public class AsignarPruebaPaciente extends Comando
             return new ResultadoComando(TipoResultadoComando.ERROR, "No existe el paciente con dni: " + dni);
         }
 
-        
     }
 
     public String getDescripcion()
