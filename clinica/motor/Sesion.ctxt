@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=Sesion
-comment0.text=\r\n\ Clase\ que\ contiene\ los\ comandos\ que\ aparecen\ inicialmente\ en\ la\ aplicaci\u00F3n.\r\n\r\n\ @author\ Pedro\ Riera\r\n\ @version\ 1.0.0.0\r\n
-comment1.params=
-comment1.target=Sesion()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Sesion\r\n
-numComments=2

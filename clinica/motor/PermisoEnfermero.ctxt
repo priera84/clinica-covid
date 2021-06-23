@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=PermisoEnfermero
-comment0.text=\r\n\ Clase\ que\ gestiona\ los\ comandos\ disponibles\ para\ los\ enfermeros.\r\n\r\n\ @author\ Pedro\ Riera\r\n\ @version\ 1.0.0.0\r\n
-comment1.params=enfermero
-comment1.target=PermisoEnfermero(clinica.logica.Enfermero)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Enfermero\r\n\ @param\ enfermero\ loggeado\ en\ el\ sistema\r\n
-numComments=2

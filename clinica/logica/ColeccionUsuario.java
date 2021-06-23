@@ -1,7 +1,4 @@
-package clinica.logica; 
-import java.util.ArrayList;
-import java.util.List;
-import java.time.LocalDate;
+package clinica.logica;
 /**
  * Clase que gestiona todas las operaciones sobre los usuarios del sistema.
  *
